@@ -6,6 +6,13 @@ namespace Domain
 {
     public class Curs
     {
+        public Curs()
+        {
+            Materie = new Materie();
+            Profesor = new Profesor();
+            Ore = new List<Orar>();
+        }
+
         public int MaterieId { get; set; }
         public Materie Materie { get; set; }
         public int ProfesorId { get; set; }

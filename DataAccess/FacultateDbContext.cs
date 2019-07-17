@@ -6,17 +6,17 @@ using Domain;
 
 namespace DataAccess
 {
-    class FacultateDbContext : DbContext
+    public class FacultateDbContext : DbContext
     {
-        DbSet<Student> students;
-        DbSet<Adresa> adrese;
-        DbSet<Curs> cursuri;
-        DbSet<Grupa> grupe;
-        DbSet<Materie> materii;
-        DbSet<Nota> note;
-        DbSet<Orar> ore;
-        DbSet<Profesor> profesori;
-        DbSet<GrupareStudenti> grupareStudenti;
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Adresa> Adrese { get; set; }
+        public DbSet<Curs> Cursuri { get; set; }
+        public DbSet<Grupa> Grupe { get; set; }
+        public DbSet<Materie> Materii { get; set; }
+        public DbSet<Nota> Note { get; set; }
+        public DbSet<Orar> Ore { get; set; }
+        public DbSet<Profesor> Profesori { get; set; }
+        public DbSet<GrupareStudenti> GrupareStudenti { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -25,6 +25,16 @@ namespace DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Adresa>().ToTable("Adresa");
+            modelBuilder.Entity<Curs>().ToTable("Curs");
+            modelBuilder.Entity<Grupa>().ToTable("Grupa");
+            modelBuilder.Entity<GrupareStudenti>().ToTable("GrupareStudenti");
+            modelBuilder.Entity<Materie>().ToTable("Materie");
+            modelBuilder.Entity<Nota>().ToTable("Nota");
+            modelBuilder.Entity<Orar>().ToTable("Orar");
+            modelBuilder.Entity<Profesor>().ToTable("Profesor");
+            modelBuilder.Entity<Student>().ToTable("Student");
+
             modelBuilder.Entity<Student>().Property(c => c.Nume).HasMaxLength(50);
             modelBuilder.Entity<Student>().Property(c => c.Prenume).HasMaxLength(100);
             modelBuilder.Entity<GrupareStudenti>().HasKey(c => new { c.GrupaId, c.StudentId });

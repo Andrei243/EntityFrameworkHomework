@@ -6,6 +6,14 @@ namespace Domain
 {
     public class Orar
     {
+        public Orar()
+        {
+            Grupa = new Grupa();
+            Materie = new Materie();
+            Profesor = new Profesor();
+            Note = new List<Nota>();
+            Curs = new Curs();
+        }
         public int GrupaId { get; set; }
         public Grupa Grupa { get; set; }
         public int MaterieId { get; set; }

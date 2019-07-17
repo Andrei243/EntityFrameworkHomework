@@ -6,6 +6,14 @@ namespace Domain
 {
     public class Nota
     {
+        public Nota()
+        {
+            Student = new Student();
+            Grupa = new Grupa();
+            Materie = new Materie();
+            Profesor = new Profesor();
+            Ora = new Orar();
+        }
         public int StudentId { get; set; }
         public Student Student { get; set; }
         public int GrupaId { get; set; }

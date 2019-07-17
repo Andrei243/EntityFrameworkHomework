@@ -6,6 +6,8 @@ namespace Domain
 {
     public class Adresa
     {
+        
+
         public int Id { get; set; }
         public string Oras { get; set; }
         public string Tara { get; set; }

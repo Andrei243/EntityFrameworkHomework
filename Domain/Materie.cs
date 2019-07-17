@@ -6,6 +6,10 @@ namespace Domain
 {
     public class Materie
     {
+        public Materie()
+        {
+            Cursuri = new List<Curs>();
+        }
         public int Id { get; set; }
         public string Denumire { get; set; }
 

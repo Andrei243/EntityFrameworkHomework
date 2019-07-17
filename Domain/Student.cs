@@ -6,6 +6,12 @@ namespace Domain
 {
     public class Student
     {
+        public Student()
+        {
+            Adresa = new Adresa();
+            Note = new List<Nota>();
+            GrupareStudenti = new List<GrupareStudenti>();
+        }
         public int Id { get; set; }
         public string Nume { get; set; }
         public string Prenume { get; set; }
